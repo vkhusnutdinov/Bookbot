@@ -12,7 +12,8 @@ book: dict[int, str] = {}
 def _get_part_text(text: str, start: int, size: int) -> tuple[str, int]:
     symbols = {'.', ',', '!', '?', ':', ';'}
     text_page = text[start:] + ' '
-    size = min(len(text_page), size)
+    if len(text_page) <= size:
+        return text_page, len(text_page)
 
     for i in range(size, 0, -1):
         if text_page[i - 1] in symbols and text_page[i] not in symbols:
