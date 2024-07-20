@@ -31,4 +31,4 @@ def prepare_book(path: str) -> None:
 
 
 # Вызов функции prepare_book для подготовки книги из текстового файла
-prepare_book(os.path.join(Path(__file__).parent, os.path.normpath(BOOK_PATH)))
+prepare_book(os.path.join(Path(__file__).parent.parent, os.path.normpath(BOOK_PATH)))
